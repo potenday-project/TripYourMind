@@ -61,8 +61,7 @@ const getScheduleListByDate = (
       accr[convertDateFormmat(realday)].push({
         ...rest,
         detailPlans: [
-          // rest?.detailPlans[0] ??
-          { id: Math.random(), detailContent: "" },
+          rest?.detailPlans[0] ?? { id: Math.random(), detailContent: "" },
         ],
         isEditable,
       });
@@ -185,7 +184,7 @@ export const getUserState = async () => {
     const { data } = await api.get(`/getuserinfo`);
     return data;
   } catch (e) {
-    window.location.href = "/error";
+    // window.location.href = "/error";
   }
 };
 
